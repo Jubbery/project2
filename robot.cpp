@@ -18,6 +18,8 @@ vector<int> new_sprocket;
 //Iterative robotomaton construction algorithm
 int IterRobot(int t)
 {
+    total.clear();
+    new_sprocket.clear();
     total.push_back(sprocket[0]);
     new_sprocket.push_back(sprocket[0]);
 
@@ -154,6 +156,7 @@ int main()
                     omniMemoArr.push_back(-1);
 
                 int output = MemoOmni(n - 1, omniMemoArr);
+                // cout << output << endl;
                 outputFile << output << endl;
 
             }
@@ -180,8 +183,9 @@ int main()
                     sprocket.push_back(s);
                     prevs.push_back(p);
                 }
-
-                outputFile << IterRobot(n) << endl;
+                int ans = IterRobot(n);
+                // cout << ans << endl;
+                outputFile << ans << endl;
             }
         }
     }
