@@ -90,8 +90,8 @@ int main()
     int numRobots;
 
     ifstream inputFile;
-    inputFile.open("input.txt");
     ofstream outputFile;
+    inputFile.open("input.txt");
     outputFile.open("output.txt");
 
     string read;
@@ -108,8 +108,6 @@ int main()
             //Read type of robot to be constructed
             getline(inputFile, read);
             getline(inputFile, robotType);
-
-            // cout << robotType << ": ";
 
             if (robotType == "omnidroid")
             {
@@ -156,7 +154,6 @@ int main()
                     omniMemoArr.push_back(-1);
 
                 int output = MemoOmni(n - 1, omniMemoArr);
-                // cout << output << endl;
                 outputFile << output << endl;
 
             }
@@ -184,7 +181,6 @@ int main()
                     prevs.push_back(p);
                 }
                 int ans = IterRobot(n);
-                // cout << ans << endl;
                 outputFile << ans << endl;
             }
         }
